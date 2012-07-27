@@ -23,7 +23,6 @@ PRODUCT_MANUFACTURER := Huawei
 #Set build fingerprint / ID / Product Name ect.
 PRODUCT_BUILD_PROP_OVERRIDES += \
 	PRODUCT_NAME=u8800pro \
-	PRODUCT_DEVICE=msm7630_surf \
 	BUILD_DISPLAY_ID="IMM76I" \
 	BUILD_FINGERPRINT=huawei/u8800pro:4.0.4/IMM76I/223133:userdebug/test-keys \
 	PRIVATE_BUILD_DESC="huawei-user 4.0.4 IMM76I 223133 test-keys" \

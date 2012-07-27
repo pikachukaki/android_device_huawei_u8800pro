@@ -21,7 +21,8 @@ PRODUCT_PACKAGES += \
     copybit.msm7630_surf \
     hwcomposer.msm7630_surf \
     libtilerenderer \
-    libQcomUI
+    libQcomUI \
+    libI420colorconvert
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -33,8 +34,8 @@ PRODUCT_PACKAGES += \
 # Other
 PRODUCT_PACKAGES += \
     dexpreopt \
-#    camera.msm7630_surf
- #   lights.u8800pro \
+    camera.msm7630_surf
+
 # Misc
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory 
@@ -121,3 +122,7 @@ PRODUCT_COPY_FILES += \
     device/huawei/u8800pro/prebuilt/usr/keylayout/surf_keypad.kl:system/usr/keylayout/surf_keypad.kl \
     device/huawei/u8800pro/prebuilt/usr/idc/atmel-rmi-touchscreen.idc:system/usr/idc/atmel-rmi-touchscreen.idc \
     device/huawei/u8800pro/prebuilt/usr/idc/synaptics.idc:system/usr/idc/synaptics.idc
+
+# uncapfps
+PRODUCT_COPY_FILES += \
+    device/huawei/u8800pro/prebuilt/uncapfps.sh::system/addon.d/uncapfps.sh

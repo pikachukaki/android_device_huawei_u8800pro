@@ -30,8 +30,8 @@ lpa.decode=false
 ro.opengles.version=131072
 
 debug.sf.hw=1
-debug.composition.type=c2d
-dev.pm.dyn_samplingrate=1
+debug.composition.type=mdp
+com.qc.hardware=true
 ro.sf.lcd_density=240
 
 #
@@ -59,3 +59,7 @@ debug.camcorder.disablemeta=0
 ro.additionalmounts=/mnt/emmc
 ro.vold.switchablepair=/mnt/sdcard,/mnt/emmc
 ro.emmc.sdcard.partition=14
+
+ro.confg.hw_appsbootversion=U8800PROVCM9_APPSBOOT
+ro.confg.hw_appversion=U8800PROVCM9_KERNEL
+ro.confg.hw_appfsversion=U8800PROVCM9_SYSIMG
