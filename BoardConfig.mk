@@ -88,7 +88,7 @@ WIFI_DRIVER_FW_PATH_AP      := "/system/wifi/firmware_apsta.bin"
 WIFI_DRIVER_MODULE_NAME     :=  "dhd"
 WIFI_DRIVER_MODULE_ARG      :=  "firmware_path=/system/wifi/firmware.bin nvram_path=/system/wifi/nvram.txt"
 
-# Sensors
+# Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 
@@ -99,9 +99,9 @@ BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
 BOARD_GPS_LIBRARIES := libloc_api
 
 # FM
-#BOARD_HAVE_FM_RADIO := true
-#BOARD_FM_DEVICE := bcm4329
-#BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO -DFM_RADIO
+BOARD_HAVE_FM_RADIO := true
+BOARD_FM_DEVICE := bcm4329
+BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO -DFM_RADIO
 
 # File System
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -121,11 +121,18 @@ BOARD_CACHEIMAGE_PARTITION_SIZE := 134217728 #128MB
 BOARD_TOMBSTONESIMAGE_PARTITION_SIZE := 4096000 #4000KB
 BOARD_FLASH_BLOCK_SIZE := 131072
 
+BOARD_USE_USB_MASS_STORAGE_SWITCH := true
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun
+BOARD_UMS_LUNFILE := "/sys/class/android_usb/android0/f_mass_storage/lun0/file"
+BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
+TARGET_USE_CUSTOM_SECOND_LUN_NUM := 2
+BOARD_VOLD_MAX_PARTITIONS := 20
+
 # Recovery
 BOARD_CUSTOM_GRAPHICS := ../../../device/huawei/u8800pro/recovery/graphics.c
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_10x18.h\"
 BOARD_HAS_NO_SELECT_BUTTON := true
-BOARD_TOUCH_RECOVERY := true
+#BOARD_TOUCH_RECOVERY := true
 
 # Custom releasetools for old partition table.
 TARGET_PROVIDES_RELEASETOOLS := true
