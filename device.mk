@@ -80,7 +80,9 @@ PRODUCT_COPY_FILES += \
     device/huawei/u8800pro/prebuilt/etc/init.qcom.fm.sh:system/etc/init.qcom.fm.sh \
     device/huawei/u8800pro/prebuilt/etc/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh \
     device/huawei/u8800pro/prebuilt/etc/init.qcom.sdio.sh:system/etc/init.qcom.sdio.sh \
-    device/huawei/u8800pro/prebuilt/etc/init.qcom.wifi.sh:system/etc/init.qcom.wifi.sh
+    device/huawei/u8800pro/prebuilt/etc/init.qcom.wifi.sh:system/etc/init.qcom.wifi.sh \
+    device/huawei/u8800pro/prebuilt/etc/AudioFilter.csv:system/etc/AudioFilter.csv \
+    device/huawei/u8800pro/prebuilt/etc/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt
     
 # BLUETOOTH
 PRODUCT_COPY_FILES += \
