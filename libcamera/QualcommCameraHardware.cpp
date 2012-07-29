@@ -6417,9 +6417,18 @@ status_t QualcommCameraHardware::setVpeParameters()
     LOGV("setVpeParameters E");
 
     video_rotation_param_ctrl_t rotCtrl;
+    int myRotation = 0;
     bool ret = true;
+    if (mRotation!=0)
+		myRotation = 0;  // if device is u8800pro then  must set 0
+	else
+		myRotation = mRotation;
     LOGV("videoWidth = %d, videoHeight = %d", videoWidth, videoHeight);
-    int rotation = (mRotation + sensor_rotation)%360;
+//    int rotation = (mRotation + sensor_rotation)%360;
+    int rotation = (myRotation + sensor_rotation)%360;
+//    LOGI("=QIWU======myRotation is %d",myRotation);
+//    LOGI("=QIWU======sensor_rotation is %d",sensor_rotation);
+//    LOGI("=QIWU======rotation is %d",rotation);
     rotCtrl.rotation = (rotation == 0) ? ROT_NONE :
                        ((rotation == 90) ? ROT_CLOCKWISE_90 :
                   ((rotation == 180) ? ROT_CLOCKWISE_180 : ROT_CLOCKWISE_270));
@@ -6452,6 +6461,7 @@ status_t QualcommCameraHardware::startRecording()
       if(mVpeEnabled){
         LOGI("startRecording: VPE enabled, setting vpe parameters");
         bool status = setVpeParameters();
+        LOGI("=QIWU=====status is  %d",status);
         if(status) {
           LOGE("Failed to set VPE parameters");
           return status;
