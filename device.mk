@@ -9,11 +9,19 @@ DEVICE_PACKAGE_OVERLAYS += device/huawei/u8800pro/overlay
 PRODUCT_LOCALES += hdpi
 
 # Video decoding
+#PRODUCT_PACKAGES += \
+#    libstagefrighthw \
+#    libmm-omxcore \
+#    libOmxCore \
+#    Torch
+
 PRODUCT_PACKAGES += \
-    libstagefrighthw \
-    libmm-omxcore \
     libOmxCore \
-    Torch
+    libOmxVenc \
+    libOmxVdec \
+    libmm-omxcore \
+    libdivxdrmdecrypt \
+    libstagefrighthw
     
 # Graphics 
 PRODUCT_PACKAGES += \

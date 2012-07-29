@@ -86,6 +86,7 @@ WIFI_DRIVER_FW_PATH_STA     := "/system/wifi/firmware.bin"
 WIFI_DRIVER_FW_PATH_AP      := "/system/wifi/firmware_apsta.bin"
 WIFI_DRIVER_MODULE_NAME     :=  "dhd"
 WIFI_DRIVER_MODULE_ARG      :=  "firmware_path=/system/wifi/firmware.bin nvram_path=/system/wifi/nvram.txt"
+TARGET_CUSTOM_WIFI := ../../device/huawei/u8800pro/private/libhardware_legacy/wifi/wifi.c
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
