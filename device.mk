@@ -135,4 +135,4 @@ PRODUCT_COPY_FILES += \
 
 # uncapfps
 PRODUCT_COPY_FILES += \
-    device/huawei/u8800pro/prebuilt/uncapfps.sh::system/addon.d/uncapfps.sh
+    device/huawei/u8800pro/prebuilt/20uncapfps:system/etc/init.d/20uncapfps
