@@ -45,8 +45,6 @@ ro.multi.rild=false
 debug.camera.landscape=true
 debug.camcorder.disablemeta=0
 
-# System
-dalvik.vm.heapsize=48m
 dalvik.vm.dexopt-data-only=1
 
 #
