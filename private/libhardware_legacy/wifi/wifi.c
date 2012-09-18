@@ -94,8 +94,6 @@ static const char EXT_MODULE_PATH[] = WIFI_EXT_MODULE_PATH;
 #define WIFI_DRIVER_FW_PATH_PARAM	"/sys/module/wlan/parameters/fwpath"
 #endif
 
-#define WIFI_DRIVER_LOADER_DELAY	1000000
-
 static const char IFACE_DIR[]           = "/data/system/wpa_supplicant";
 #ifdef WIFI_DRIVER_MODULE_PATH
 static const char DRIVER_MODULE_NAME[]  = WIFI_DRIVER_MODULE_NAME;
@@ -149,6 +147,9 @@ char* get_samsung_wifi_type()
 
     if (strncmp(buf, "semcove", 7) == 0)
         return "_semcove";
+
+    if (strncmp(buf, "semcosh", 7) == 0)
+        return "_semcosh";
 
     return NULL;
 }
@@ -300,7 +301,9 @@ int wifi_load_driver()
     }
 
     if (strcmp(FIRMWARE_LOADER,"") == 0) {
-        /* usleep(WIFI_DRIVER_LOADER_DELAY); */
+#ifdef WIFI_DRIVER_LOADER_DELAY
+        usleep(WIFI_DRIVER_LOADER_DELAY);
+#endif
         property_set(DRIVER_PROP_NAME, "ok");
     }
     else {
@@ -419,7 +422,9 @@ int wifi_load_hotspot_driver()
     }
 
     if (strcmp(AP_FIRMWARE_LOADER,"") == 0) {
-        /* usleep(WIFI_DRIVER_LOADER_DELAY); */
+#ifdef WIFI_DRIVER_LOADER_DELAY
+        usleep(WIFI_DRIVER_LOADER_DELAY);
+#endif
         property_set(AP_DRIVER_PROP_NAME, "ok");
     }
     else {

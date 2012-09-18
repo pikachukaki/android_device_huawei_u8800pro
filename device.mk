@@ -74,6 +74,7 @@ PRODUCT_COPY_FILES += \
     device/huawei/u8800pro/root/init.qcom.sh:root/init.qcom.sh \
     device/huawei/u8800pro/root/init.qcom.usb.sh:root/init.qcom.usb.sh \
     device/huawei/u8800pro/root/ueventd.huawei.rc:root/ueventd.huawei.rc
+    device/huawei/u8800pro/root/init.rc:root/init.rc
 
 # ETC
 PRODUCT_COPY_FILES += \
@@ -135,3 +136,7 @@ PRODUCT_COPY_FILES += \
     device/huawei/u8800pro/prebuilt/usr/keylayout/surf_keypad.kl:system/usr/keylayout/surf_keypad.kl \
     device/huawei/u8800pro/prebuilt/usr/idc/atmel-rmi-touchscreen.idc:system/usr/idc/atmel-rmi-touchscreen.idc \
     device/huawei/u8800pro/prebuilt/usr/idc/synaptics.idc:system/usr/idc/synaptics.idc
+
+# uncapfps
+PRODUCT_COPY_FILES += \
+    device/huawei/u8800pro/prebuilt/20uncapfps:system/etc/init.d/20uncapfps

@@ -10,11 +10,15 @@ TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH_VARIANT := armv7-a-neon
 ARCH_ARM_HAVE_TLS_REGISTER := true
 ARCH_ARM_HAVE_NEON :=true
+ARCH_ARM_HAVE_VFP := true
 
 TARGET_BOARD_PLATFORM := msm7630_surf
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
 TARGET_BOOTLOADER_BOARD_NAME := u8800pro
 TARGET_OTA_ASSERT_DEVICE := u8800pro,U8800PRO
+
+TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
+TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
@@ -66,7 +70,7 @@ ENABLE_WEBGL = true
 WEBCORE_INPAGE_VIDEO := true
 
 # Kernel
-TARGET_KERNEL_SOURCE := kernel/huawei/u8800pro
+TARGET_KERNEL_SOURCE := kernel/huawei/8860
 TARGET_KERNEL_CONFIG := shendu_u8800pro_defconfig
 
 #TARGET_PREBUILT_KERNEL := device/huawei/u8800pro/kernel
@@ -90,6 +94,7 @@ WIFI_DRIVER_FW_PATH_AP      := "/system/wifi/firmware_apsta.bin"
 WIFI_DRIVER_MODULE_NAME     :=  "dhd"
 WIFI_DRIVER_MODULE_ARG      :=  "firmware_path=/system/wifi/firmware.bin nvram_path=/system/wifi/nvram.txt"
 TARGET_CUSTOM_WIFI := ../../device/huawei/u8800pro/private/libhardware_legacy/wifi/wifi.c
+WIFI_BAND                        := 802_11_ABG
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
@@ -145,8 +150,4 @@ TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := ./device/huawei/u8800pro/releasetoo
 # ETC
 TARGET_SPECIFIC_HEADER_PATH := device/huawei/u8800pro/include
 
-TARGET_COMPRESS_MODULE_SYMBOLS := false
-TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
-TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
-BOARD_ALWAYS_INSECURE := true
 

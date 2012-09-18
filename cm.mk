@@ -1,6 +1,8 @@
 ## Specify phone tech before including full_phone
 $(call inherit-product, vendor/cm/config/gsm.mk)
 
+$(call inherit-product, frameworks/base/build/phone-hdpi-512-dalvik-heap.mk)
+
 # Release name
 PRODUCT_RELEASE_NAME := U8800PRO
 
@@ -23,7 +25,7 @@ PRODUCT_MANUFACTURER := Huawei
 #Set build fingerprint / ID / Product Name ect.
 PRODUCT_BUILD_PROP_OVERRIDES += \
 	PRODUCT_NAME=u8800pro \
-	BUILD_DISPLAY_ID="IMM76I" \
-	BUILD_FINGERPRINT=huawei/u8800pro:4.0.4/IMM76I/223133:userdebug/test-keys \
-	PRIVATE_BUILD_DESC="huawei-user 4.0.4 IMM76I 223133 test-keys" \
+	BUILD_DISPLAY_ID="IMM76L" \
+	BUILD_FINGERPRINT=huawei/u8800pro:4.0.4/IMM76L/223133:userdebug/test-keys \
+	PRIVATE_BUILD_DESC="huawei-user 4.0.4 IMM76L 223133 test-keys" \
 	BUILD_NUMBER=223134

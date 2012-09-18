@@ -28,15 +28,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 PRODUCT_AAPT_CONFIG := normal hdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 
-# USB mass storage
-ADDITIONAL_DEFAULT_PROPERTIES += \
-    persist.sys.usb.config=mass_storage
-
 # ADB access
-ADDITIONAL_DEFAULT_PROPERTIES += \
-    persist.service.adb.enable=1
-
-# Sensors (Prebuilt)
+#ADDITIONAL_DEFAULT_PROPERTIES += \
+#    persist.service.adb.enable=1
 
 # Live Wallpapers
 PRODUCT_PACKAGES += \
@@ -51,7 +45,7 @@ PRODUCT_PACKAGES += \
     	setup_fs
 
 # Set those variables here to overwrite the inherited values.
-PRODUCT_NAME := full_u8800pro
+PRODUCT_NAME := huawei_u8800pro
 PRODUCT_DEVICE := u8800pro
-PRODUCT_BRAND := Android
-PRODUCT_MODEL := Full Android on u8800pro
+PRODUCT_BRAND := Huawei
+PRODUCT_MODEL := U8800Pro
