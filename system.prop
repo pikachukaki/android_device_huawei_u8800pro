@@ -28,7 +28,7 @@ lpa.decode=false
 ro.opengles.version=131072
 
 debug.sf.hw=1
-#debug.composition.type=mdp
+debug.composition.type=mdp
 com.qc.hardware=true
 ro.sf.lcd_density=240
 
@@ -44,7 +44,7 @@ debug.camera.landscape=true
 debug.camcorder.disablemeta=0
 
 # System
-dalvik.vm.heapsize=64m
+#dalvik.vm.heapsize=64m
 dalvik.vm.dexopt-data-only=1
 
 #
