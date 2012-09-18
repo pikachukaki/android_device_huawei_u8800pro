@@ -120,6 +120,4 @@
          Bluetooth Module -->
     <bool name="config_bluetooth_adapter_quick_switch">true</bool>
 
-    <string name="config_legacyUmsLunFile">/sys/devices/platform/msm_hsusb/gadget/lun0/file</string>
-
 </resources>

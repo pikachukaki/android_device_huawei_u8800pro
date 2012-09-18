@@ -96,7 +96,7 @@ case "$target" in
 # /* add support to u8860/c8860 */
 # /*< DTS2011092001051 zhaosongwei  20110920 begin */
 # /* add support to u8680/u8730 */
-    "u8800pro" | "hwu8800Pro" | "hwu8680" | "hwu8730" | "hwm886" | "hwu8860" | "hwc8860" | "msm7630_surf" | "msm7630_1x" | "msm7630_fusion")
+    "u8860" | "c8860e" | "u8800pro" | "hwu8800Pro" | "hwu8680" | "hwu8730" | "hwm886" | "hwu8860" | "hwc8860" | "msm7630_surf" | "msm7630_1x" | "msm7630_fusion")
 # /* DTS2011092001051 zhaosongwei  20110920 end > */
 # /* DTS2011061005484 fangxinyong  20110613 end > */
 # DTS2011080503149 zhangqijia 20110808 end

@@ -28,11 +28,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 PRODUCT_AAPT_CONFIG := normal hdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 
-PRODUCT_PROPERTY_OVERRIDES += \
-        dalvik.vm.heapstartsize=5m \
-        dalvik.vm.heapgrowthlimit=48m \
-        dalvik.vm.heapsize=128m
-
 # USB mass storage
 ADDITIONAL_DEFAULT_PROPERTIES += \
     persist.sys.usb.config=mass_storage
@@ -40,50 +35,6 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 # ADB access
 ADDITIONAL_DEFAULT_PROPERTIES += \
     persist.service.adb.enable=1
-
-# Camera
-PRODUCT_PACKAGES += \
-	Camera
-
-# Audio
-PRODUCT_PACKAGES += \
-	audio.a2dp.default \
-	audio_policy.msm7x30 \
-	audio.primary.msm7x30 \
-	libaudioutils
-
-# Camera
-PRODUCT_PACKAGES += \
-	camera.msm7x30 \
-	libcamera
-
-# Video
-PRODUCT_PACKAGES += \
-	copybit.msm7x30 \
-	gralloc.msm7x30 \
-	hwcomposer.msm7x30 \
-	libgenlock \
-	libmemalloc \
-	liboverlay \
-	libQcomUI \
-	libtilerenderer
-
-# Media
-PRODUCT_PACKAGES += \
-	libOmxCore \
-	libOmxVenc \
-	libOmxVdec \
-	libmm-omxcore \
-	libdivxdrmdecrypt \
-	libstagefrighthw
-
-# GPS
-PRODUCT_PACKAGES += \
-	gps.u8800pro
-
-# Lights
-PRODUCT_PACKAGES += \
-	lights.msm7x30
 
 # Sensors (Prebuilt)
 
@@ -103,4 +54,4 @@ PRODUCT_PACKAGES += \
 PRODUCT_NAME := full_u8800pro
 PRODUCT_DEVICE := u8800pro
 PRODUCT_BRAND := Android
-PRODUCT_MODEL := Full Android on U8800PRO
+PRODUCT_MODEL := Full Android on u8800pro

@@ -8,13 +8,6 @@ $(call inherit-product-if-exists, vendor/huawei/u8800pro/u8800pro-vendor.mk)
 DEVICE_PACKAGE_OVERLAYS += device/huawei/u8800pro/overlay
 PRODUCT_LOCALES += hdpi
 
-# Video decoding
-#PRODUCT_PACKAGES += \
-#    libstagefrighthw \
-#    libmm-omxcore \
-#    libOmxCore \
-#    Torch
-
 PRODUCT_PACKAGES += \
     libOmxCore \
     libOmxVenc \
@@ -28,8 +21,11 @@ PRODUCT_PACKAGES += \
     gralloc.msm7630_surf \
     copybit.msm7630_surf \
     hwcomposer.msm7630_surf \
-    libtilerenderer \
+    libgenlock \
+    libmemalloc \
+    liboverlay \
     libQcomUI \
+    libtilerenderer \
     libI420colorconvert
 
 # Audio
@@ -42,11 +38,19 @@ PRODUCT_PACKAGES += \
 # Other
 PRODUCT_PACKAGES += \
     dexpreopt \
-    camera.msm7630_surf
+    gps.u8800pro
 
+# Filesystem management tools
+PRODUCT_PACKAGES += \
+    make_ext4fs \
+    setup_fs
+    
 # Misc
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory 
+
+# we have enough storage space to hold precise GC data
+PRODUCT_TAGS += dalvik.gc.type-precise
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
@@ -126,13 +130,8 @@ PRODUCT_COPY_FILES += \
     device/huawei/u8800pro/prebuilt/usr/keychars/surf_keypad.kcm:system/usr/keychars/surf_keypad.kcm \
     device/huawei/u8800pro/prebuilt/usr/keylayout/7k_handset.kl:system/usr/keylayout/7k_handset.kl \
     device/huawei/u8800pro/prebuilt/usr/keylayout/fluid-keypad.kl:system/usr/keylayout/fluid-keypad.kl \
-    device/huawei/u8800pro/prebuilt/usr/keylayout/Generic.kl:system/usr/keylayout/Generic.kl \
     device/huawei/u8800pro/prebuilt/usr/keylayout/msm_tma300_ts.kl:system/usr/keylayout/msm_tma300_ts.kl \
     device/huawei/u8800pro/prebuilt/usr/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl \
     device/huawei/u8800pro/prebuilt/usr/keylayout/surf_keypad.kl:system/usr/keylayout/surf_keypad.kl \
     device/huawei/u8800pro/prebuilt/usr/idc/atmel-rmi-touchscreen.idc:system/usr/idc/atmel-rmi-touchscreen.idc \
     device/huawei/u8800pro/prebuilt/usr/idc/synaptics.idc:system/usr/idc/synaptics.idc
-
-# uncapfps
-PRODUCT_COPY_FILES += \
-    device/huawei/u8800pro/prebuilt/20uncapfps:system/etc/init.d/20uncapfps

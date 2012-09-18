@@ -17,7 +17,7 @@ $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 PRODUCT_DEVICE := u8800pro
 PRODUCT_NAME := cm_u8800pro
 PRODUCT_BRAND := Huawei
-PRODUCT_MODEL := u8800pro
+PRODUCT_MODEL := U8800Pro
 PRODUCT_MANUFACTURER := Huawei
 
 #Set build fingerprint / ID / Product Name ect.
@@ -26,4 +26,4 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 	BUILD_DISPLAY_ID="IMM76I" \
 	BUILD_FINGERPRINT=huawei/u8800pro:4.0.4/IMM76I/223133:userdebug/test-keys \
 	PRIVATE_BUILD_DESC="huawei-user 4.0.4 IMM76I 223133 test-keys" \
-	BUILD_NUMBER=223133
+	BUILD_NUMBER=223134

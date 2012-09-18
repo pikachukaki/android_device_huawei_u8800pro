@@ -1,15 +1,13 @@
 #
-# system.prop for u8800pro
+# system.prop for u8860
 #
 
 rild.libpath=/system/lib/libril-qc-1.so
 rild.libargs=-d /dev/smd0
 ro.telephony.default_network=0
-ro.telephony.ril_class=HWHONORRIL
+ro.telephony.ril_class=QualcommSharedRIL
 ril.subscription.types=NV,RUIM
 DEVICE_PROVISIONED=1
-#ro.telephony.ril.v3=icccardstatus,datacall,signalstrength,facilitylock
-
 # system props for the data modules and for telephony modules
 #
 ro.use_data_netmgrd=true
@@ -45,10 +43,6 @@ ro.multi.rild=false
 debug.camera.landscape=true
 debug.camcorder.disablemeta=0
 
-# System
-dalvik.vm.heapsize=48m
-dalvik.vm.dexopt-data-only=1
-
 #
 # system prop for Bluetooth
 #
@@ -56,6 +50,10 @@ dalvik.vm.dexopt-data-only=1
 #ro.bluetooth.request.master=true
 #ro.bluetooth.remote.autoconnect=true
 #ro.qualcomm.bluetooth.dun=true
+
+# System
+dalvik.vm.heapsize=48m
+dalvik.vm.dexopt-data-only=1
 
 #
 # system prop for internal and external SD and SD card emulation of emmc partition

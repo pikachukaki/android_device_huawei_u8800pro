@@ -9,9 +9,8 @@ TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH_VARIANT := armv7-a-neon
 ARCH_ARM_HAVE_TLS_REGISTER := true
-#ARCH_ARM_HAVE_NEON :=true
+ARCH_ARM_HAVE_NEON :=true
 
-#TARGET_BOARD_PLATFORM := msm7x30
 TARGET_BOARD_PLATFORM := msm7630_surf
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
 TARGET_BOOTLOADER_BOARD_NAME := u8800pro
@@ -39,7 +38,7 @@ COMMON_GLOBAL_CFLAGS += -DWITH_QCOM_LPA
 COMMON_GLOBAL_CFLAGS += -DWITH_QCOM_SPEECH
 
 # RIL
-#BOARD_PROVIDES_LIBRIL := true
+BOARD_PROVIDES_LIBRIL := true
 
 # Graphics
 DCHECK_FOR_EXTERNAL_FORMAT := true
@@ -67,7 +66,10 @@ ENABLE_WEBGL = true
 WEBCORE_INPAGE_VIDEO := true
 
 # Kernel
-TARGET_PREBUILT_KERNEL := device/huawei/u8800pro/kernel
+TARGET_KERNEL_SOURCE := kernel/huawei/u8800pro
+TARGET_KERNEL_CONFIG := shendu_u8800pro_defconfig
+
+#TARGET_PREBUILT_KERNEL := device/huawei/u8800pro/kernel
 #TARGET_PREBUILT_RECOVERY_KERNEL := device/huawei/u8800pro/kernel
 
 BOARD_KERNEL_CMDLINE := console=ttyDCC0 androidboot.hardware=huawei
@@ -123,11 +125,12 @@ BOARD_TOMBSTONESIMAGE_PARTITION_SIZE := 4096000 #4000KB
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 BOARD_USE_USB_MASS_STORAGE_SWITCH := true
-TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/android0/f_mass_storage/lun/file"
+#TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun/file
 #BOARD_UMS_LUNFILE := "/sys/class/android_usb/android0/f_mass_storage/lun0/file"
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
-TARGET_USE_CUSTOM_SECOND_LUN_NUM := 0
-BOARD_VOLD_MAX_PARTITIONS := 20
+TARGET_USE_CUSTOM_SECOND_LUN_NUM := 1
+BOARD_VOLD_MAX_PARTITIONS := 14
+
 
 # Recovery
 BOARD_CUSTOM_GRAPHICS := ../../../device/huawei/u8800pro/recovery/graphics.c
@@ -138,7 +141,7 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 # Custom releasetools for old partition table.
 TARGET_PROVIDES_RELEASETOOLS := true
 TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := ./device/huawei/u8800pro/releasetools/ota_from_target_files
-#TARGET_CUSTOM_RELEASETOOL := device/huawei/u8800pro/tools/releasetools
+
 # ETC
 TARGET_SPECIFIC_HEADER_PATH := device/huawei/u8800pro/include
 
@@ -146,3 +149,4 @@ TARGET_COMPRESS_MODULE_SYMBOLS := false
 TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 BOARD_ALWAYS_INSECURE := true
+

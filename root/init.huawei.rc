@@ -8,7 +8,6 @@ on init
     mkdir /mnt 0775 root system
     mkdir /HWUserData  0000 system system
     mkdir /mnt/sdcard 0000 system system
-    mkdir /mnt/sdcard1 0000 system system
     mkdir /mnt/emmc 0000 system system
 # Backwards Compat - XXX: Going away in G*
     symlink /mnt/sdcard /sdcard
@@ -35,7 +34,8 @@ on emmc-fs
     mount ext3 loop@.cust_backup/image/cust.img /cust rw
 
 on post-fs
-
+    chown system system /persist
+    chmod 0771 /persist
     chmod 0664 /sys/devices/platform/msm_sdcc.1/polling
     chmod 0664 /sys/devices/platform/msm_sdcc.2/polling
     chmod 0664 /sys/devices/platform/msm_sdcc.3/polling
@@ -332,9 +332,8 @@ on property:init.svc.bootanim=stopped
 #    disabled
 
 service oem_rpc_svc /system/bin/oem_rpc_svc
-    class late_start
-    user system
-    group system
+    class main
+    oneshot
 
 #on property:ro.hdmi.enable=true
 #    start hdmid
@@ -434,23 +433,25 @@ service hcidump /system/bin/sh /system/etc/hcidump.sh
     group bluetooth system net_bt_admin net_admin
     disabled
     oneshot
-
-#by geno
-
-service geno /sbin/geno
-    class late_start
-    oneshot
-
-service optimize /sbin/odex
+    
+service compassd /system/bin/compassd
+    class main
     disabled
     oneshot
 
-service timing /sbin/timing
+service akm8975 /system/bin/akmd8975
+    class main
     disabled
     oneshot
 
-on property:dev.bootcomplete=1
-    start optimize
-    start timing
+service akm8962 /system/bin/akmd8962
+    class main
+    disabled
+    oneshot
 
-#by geno
+service rmt_oeminfo /system/bin/rmt_oeminfo
+    class main
+    user root
+    oneshot
+
+

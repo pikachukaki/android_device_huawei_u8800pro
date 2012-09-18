@@ -15,7 +15,7 @@
 # limitations under the License.
 
 VENDOR=huawei
-DEVICE=u8800
+DEVICE=u8800pro
 OUTDIR=vendor/$VENDOR/$DEVICE
 MAKEFILE=../../../$OUTDIR/$DEVICE-vendor-blobs.mk
 
