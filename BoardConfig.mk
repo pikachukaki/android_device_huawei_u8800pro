@@ -9,14 +9,18 @@ TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH_VARIANT := armv7-a-neon
 ARCH_ARM_HAVE_TLS_REGISTER := true
+ARCH_ARM_HAVE_NEON :=true
+ARCH_ARM_HAVE_VFP := true
 
 TARGET_BOARD_PLATFORM := msm7630_surf
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
 TARGET_BOOTLOADER_BOARD_NAME := u8800pro
 TARGET_OTA_ASSERT_DEVICE := u8800pro,U8800PRO
 
+TARGET_COMPRESS_MODULE_SYMBOLS := false
 TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
+BOARD_ALWAYS_INSECURE := true
 
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
@@ -74,11 +78,11 @@ ENABLE_WEBGL = true
 WEBCORE_INPAGE_VIDEO := true
 
 # Kernel
-#TARGET_KERNEL_SOURCE := kernel/huawei/8860
-#TARGET_KERNEL_CONFIG := shendu_u8800pro_defconfig
+TARGET_KERNEL_SOURCE := kernel/huawei/8860
+TARGET_KERNEL_CONFIG := shendu_u8800pro_defconfig
 
-TARGET_PREBUILT_KERNEL := device/huawei/u8800pro/kernel
-TARGET_PREBUILT_RECOVERY_KERNEL := device/huawei/u8800pro/kernel
+#TARGET_PREBUILT_KERNEL := device/huawei/u8800pro/kernel
+#TARGET_PREBUILT_RECOVERY_KERNEL := device/huawei/u8800pro/kernel
 
 BOARD_KERNEL_CMDLINE := console=ttyDCC0 androidboot.hardware=huawei
 BOARD_INSTALLER_CMDLINE := $(BOARD_KERNEL_CMDLINE)
