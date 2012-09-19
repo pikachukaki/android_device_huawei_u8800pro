@@ -20,9 +20,11 @@
 <!-- These resources are around just to allow their values to be customized
      for different hardware and product builds. -->
 <resources>
-
-   <string-array name="pref_camera_flashmode_entryvalues" translatable="false">
+	<!-- Allows setting video size before recording starts -->
+	<bool name="needsEarlyVideoSize">true</bool>
+	<string-array name="pref_camera_flashmode_entryvalues" translatable="false">
         <item>auto</item>
         <item>torch</item>
         <item>off</item>
-    </string-array></resources>
+    </string-array>
+</resources>
