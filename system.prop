@@ -5,7 +5,7 @@
 rild.libpath=/system/lib/libril-qc-1.so
 rild.libargs=-d /dev/smd0
 ro.telephony.default_network=0
-ro.telephony.ril_class=HwQcomRIL
+ro.telephony.ril_class=QualcommSharedRIL
 ril.subscription.types=NV,RUIM
 DEVICE_PROVISIONED=1
 # system props for the data modules and for telephony modules
@@ -43,7 +43,7 @@ debug.camera.landscape=true
 debug.camcorder.disablemeta=0
 
 # System
-#dalvik.vm.heapsize=64m
+dalvik.vm.heapsize=64m
 dalvik.vm.dexopt-data-only=1
 
 #

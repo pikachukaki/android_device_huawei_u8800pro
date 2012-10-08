@@ -54,17 +54,17 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
-    frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
-    frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-    frameworks/base/data/etc/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
-    frameworks/base/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
-    frameworks/base/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
-    frameworks/base/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
-    frameworks/base/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
-    frameworks/base/data/etc/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml \
-    frameworks/base/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
-    frameworks/base/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
-    frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
+    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
+    frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
+    frameworks/native/data/etc/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
+    frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
+    frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
+    frameworks/native/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
+    frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
+    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml \
+    frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
+    frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
+    frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
 
 # init
 PRODUCT_COPY_FILES += \
@@ -81,10 +81,8 @@ PRODUCT_COPY_FILES += \
     device/huawei/u8800pro/prebuilt/etc/vold.fstab:system/etc/vold.fstab \
     device/huawei/u8800pro/prebuilt/etc/init.qcom.bt.sh:system/etc/init.qcom.bt.sh \
     device/huawei/u8800pro/prebuilt/etc/init.qcom.coex.sh:system/etc/init.qcom.coex.sh \
-    device/huawei/u8800pro/prebuilt/etc/init.qcom.fm.sh:system/etc/init.qcom.fm.sh \
     device/huawei/u8800pro/prebuilt/etc/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh \
     device/huawei/u8800pro/prebuilt/etc/init.qcom.sdio.sh:system/etc/init.qcom.sdio.sh \
-    device/huawei/u8800pro/prebuilt/etc/init.qcom.wifi.sh:system/etc/init.qcom.wifi.sh \
     device/huawei/u8800pro/prebuilt/etc/AudioFilter.csv:system/etc/AudioFilter.csv \
     device/huawei/u8800pro/prebuilt/etc/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt
     

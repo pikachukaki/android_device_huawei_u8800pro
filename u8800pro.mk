@@ -32,6 +32,9 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 #ADDITIONAL_DEFAULT_PROPERTIES += \
 #    persist.service.adb.enable=1
 
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    persist.sys.usb.config=mass_storage
+
 # Live Wallpapers
 PRODUCT_PACKAGES += \
    	LiveWallpapers \
