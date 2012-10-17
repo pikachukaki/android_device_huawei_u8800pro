@@ -151,8 +151,7 @@ BOARD_TOMBSTONESIMAGE_PARTITION_SIZE := 4096000 #4000KB
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 BOARD_USE_USB_MASS_STORAGE_SWITCH := true
-#TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun/file
-#BOARD_UMS_LUNFILE := "/sys/class/android_usb/android0/f_mass_storage/lun0/file"
+TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/android0/f_mass_storage/lun%d/file"
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 TARGET_USE_CUSTOM_SECOND_LUN_NUM := 1
 BOARD_VOLD_MAX_PARTITIONS := 14
