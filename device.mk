@@ -1,8 +1,7 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+
+# The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_as_supl.mk)
-$(call inherit-product, build/target/product/full.mk)
-$(call inherit-product-if-exists, vendor/huawei/u8800pro/u8800pro-vendor.mk)
-# Include proprietary stuff
 $(call inherit-product-if-exists, vendor/huawei/u8800pro/u8800pro-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/huawei/u8800pro/overlay
@@ -85,7 +84,8 @@ PRODUCT_COPY_FILES += \
     device/huawei/u8800pro/prebuilt/etc/init.qcom.sdio.sh:system/etc/init.qcom.sdio.sh \
     device/huawei/u8800pro/prebuilt/etc/AudioFilter.csv:system/etc/AudioFilter.csv \
     device/huawei/u8800pro/prebuilt/etc/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt \
-    device/huawei/u8800pro/prebuilt/etc/audio_policy.conf:system/etc/audio_policy.conf
+    device/huawei/u8800pro/prebuilt/etc/audio_policy.conf:system/etc/audio_policy.conf \
+    device/huawei/u8800pro/prebuilt/etc/media_codecs.xml:system/etc/media_codecs.xml
     
 # BLUETOOTH
 PRODUCT_COPY_FILES += \
@@ -138,3 +138,4 @@ PRODUCT_COPY_FILES += \
 # uncapfps
 PRODUCT_COPY_FILES += \
     device/huawei/u8800pro/prebuilt/20uncapfps:system/etc/init.d/20uncapfps
+$(call inherit-product, build/target/product/full.mk)

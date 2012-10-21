@@ -1,11 +1,11 @@
 #
-# system.prop for u8860
+# system.prop for u8800PRO
 #
 
 rild.libpath=/system/lib/libril-qc-1.so
 rild.libargs=-d /dev/smd0
 ro.telephony.default_network=0
-ro.telephony.ril_class=QualcommSharedRIL
+ro.telephony.ril_class=HwQcomRIL
 ril.subscription.types=NV,RUIM
 DEVICE_PROVISIONED=1
 # system props for the data modules and for telephony modules

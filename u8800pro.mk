@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#      http://www.apache.org/licenses/LICENSE-2.0
+# http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -12,25 +12,25 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+#
+# This file is the build configuration for a full Android
+# build for toro hardware. This cleanly combines a set of
+# device-specific aspects (drivers) with a device-agnostic
+# product configuration (apps). Except for a few implementation
+# details, it only fundamentally contains two inherit-product
+# lines, full and toro, hence its name.
+#
 
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/telephony.mk)
 # Inherit from u8800pro device
 $(call inherit-product, device/huawei/u8800pro/device.mk)
 
-# Include all languages
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-
-# This is where we'd set a backup provider if we had one
-#$(call inherit-product, device/sample/products/backup_overlay.mk)
 
 # U8800 uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal hdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
-
-# ADB access
-#ADDITIONAL_DEFAULT_PROPERTIES += \
-#    persist.service.adb.enable=1
 
 ADDITIONAL_DEFAULT_PROPERTIES += \
     persist.sys.usb.config=mass_storage
@@ -51,4 +51,5 @@ PRODUCT_PACKAGES += \
 PRODUCT_NAME := huawei_u8800pro
 PRODUCT_DEVICE := u8800pro
 PRODUCT_BRAND := Huawei
+PRODUCT_MANUFACTURER := Huawei
 PRODUCT_MODEL := U8800Pro

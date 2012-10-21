@@ -1,24 +1,23 @@
-## Specify phone tech before including full_phone
-$(call inherit-product, vendor/cm/config/gsm.mk)
-
-# Release name
-PRODUCT_RELEASE_NAME := U8800PRO
-
-# Boot animation
+# Correct bootanimation size for the screen
 TARGET_BOOTANIMATION_NAME := vertical-480x800
 
 # Inherit device configuration
 $(call inherit-product, device/huawei/u8800pro/u8800pro.mk)
 
 # Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+$(call inherit-product, vendor/cm/config/common_mini_phone.mk)
 
-## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := u8800pro
+# Inherit some common CM stuff.
+$(call inherit-product, vendor/cm/config/gsm.mk)
+
+# Setup device configuration
+
 PRODUCT_NAME := cm_u8800pro
+PRODUCT_DEVICE := u8800pro
 PRODUCT_BRAND := Huawei
 PRODUCT_MODEL := U8800Pro
 PRODUCT_MANUFACTURER := Huawei
+PRODUCT_RELEASE_NAME := U8800PRO
 
 #Set build fingerprint / ID / Product Name ect.
 PRODUCT_BUILD_PROP_OVERRIDES += \
