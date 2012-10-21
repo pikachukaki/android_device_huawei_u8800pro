@@ -84,7 +84,8 @@ PRODUCT_COPY_FILES += \
     device/huawei/u8800pro/prebuilt/etc/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh \
     device/huawei/u8800pro/prebuilt/etc/init.qcom.sdio.sh:system/etc/init.qcom.sdio.sh \
     device/huawei/u8800pro/prebuilt/etc/AudioFilter.csv:system/etc/AudioFilter.csv \
-    device/huawei/u8800pro/prebuilt/etc/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt
+    device/huawei/u8800pro/prebuilt/etc/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt \
+    device/huawei/u8800pro/prebuilt/etc/audio_policy.conf:system/etc/audio_policy.conf
     
 # BLUETOOTH
 PRODUCT_COPY_FILES += \
