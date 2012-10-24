@@ -103,7 +103,7 @@ BOARD_KERNEL_BASE := 0x00200000
 BOARD_KERNEL_PAGESIZE := 4096
 
 # Wifi
-WIFI_BOARD_NAME_HUAWEI := true 
+BOARD_HAVE_HUAWEI_WIFI := true 
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 HOSTAPD_VERSION := VER_0_8_X
 BOARD_WPA_SUPPLICANT_DRIVER := WEXT
@@ -116,7 +116,7 @@ WIFI_DRIVER_MODULE_NAME     :=  "dhd"
 WIFI_DRIVER_MODULE_ARG      :=  "firmware_path=/system/wifi/firmware.bin nvram_path=/system/wifi/nvram.txt"
 #TARGET_CUSTOM_WIFI := ../../device/huawei/u8800pro/private/libhardware_legacy/wifi/wifi.c
 WIFI_BAND                        := 802_11_ABG
-
+BOARD_USE_SERNUM_FOR_MAC := true
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
