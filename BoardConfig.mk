@@ -157,10 +157,13 @@ BOARD_VOLD_MAX_PARTITIONS := 14
 
 
 # Recovery
-#BOARD_CUSTOM_GRAPHICS := ../../../device/huawei/u8800pro/recovery/graphics.c
-BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_10x18.h\"
+
 BOARD_HAS_NO_SELECT_BUTTON := true
-#BOARD_TOUCH_RECOVERY := true
+RECOVERY_CHARGEMODE := true
+BOARD_UMS_LUNFILE := "/sys/class/android_usb/android0/f_mass_storage/lun1/file"
+TARGET_RECOVERY_INITRC := device/huawei/u8800pro/recovery/recovery.rc
+TARGET_RECOVERY_FSTAB := device/huawei/u8800pro/recovery_recovery.fstab
+BOARD_RECOVERY_RMT_STORAGE := true
 
 # Custom releasetools for old partition table.
 TARGET_PROVIDES_RELEASETOOLS := true
