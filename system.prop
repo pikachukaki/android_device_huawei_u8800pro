@@ -36,6 +36,18 @@ ro.sf.lcd_density=240
 #
 ro.multi.rild=false
 
+ro.ril.hsxpa=2
+ro.ril.gprsclass=12
+ro.ril.hep=1
+ro.ril.enable.dtm=1
+ro.ril.hsdpa.category=10
+ro.ril.enable.a53=1
+ro.ril.enable.3g.prefix=1
+ro.ril.htcmaskw1.bitmask=4294967295
+ro.ril.htcmaskw1=14449
+ro.ril.hsupa.category=5
+pm.sleep_mode=1
+
 #
 # system prop for using landscape preview layout in camera
 #
