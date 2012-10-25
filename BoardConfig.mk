@@ -91,11 +91,11 @@ ENABLE_WEBGL = true
 WEBCORE_INPAGE_VIDEO := true
 
 # Kernel
-#TARGET_KERNEL_SOURCE := kernel/huawei/8860
-#TARGET_KERNEL_CONFIG := shendu_u8800pro_defconfig
+TARGET_KERNEL_SOURCE := kernel/huawei/8860
+TARGET_KERNEL_CONFIG := shendu_u8800pro_defconfig
 
-TARGET_PREBUILT_KERNEL := device/huawei/u8800pro/kernel
-TARGET_PREBUILT_RECOVERY_KERNEL := device/huawei/u8800pro/kernel
+#TARGET_PREBUILT_KERNEL := device/huawei/u8800pro/kernel
+#TARGET_PREBUILT_RECOVERY_KERNEL := device/huawei/u8800pro/kernel
 
 BOARD_KERNEL_CMDLINE := console=ttyDCC0 androidboot.hardware=huawei
 BOARD_INSTALLER_CMDLINE := $(BOARD_KERNEL_CMDLINE)
