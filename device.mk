@@ -13,8 +13,7 @@ PRODUCT_PACKAGES += \
     libOmxVdec \
     libmm-omxcore \
     libdivxdrmdecrypt \
-    libstagefrighthw \
-    power.u8800pro
+    libstagefrighthw
     
 # Graphics 
 PRODUCT_PACKAGES += \
