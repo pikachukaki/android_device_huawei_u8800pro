@@ -99,8 +99,6 @@ PRODUCT_COPY_FILES += \
 # WIFI
 PRODUCT_COPY_FILES += \
     device/huawei/u8800pro/prebuilt/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
-    device/huawei/u8800pro/prebuilt/wifi/firmware.bin:system/wifi/firmware.bin \
-    device/huawei/u8800pro/prebuilt/wifi/firmware_apsta.bin:system/wifi/firmware_apsta.bin \
     device/huawei/u8800pro/prebuilt/wifi/nvram.txt:system/wifi/nvram.txt \
     device/huawei/u8800pro/prebuilt/wifi/dhd.ko:system/wifi/dhd.ko
 
