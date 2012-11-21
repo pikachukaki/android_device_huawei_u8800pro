@@ -7,6 +7,7 @@ $(call inherit-product-if-exists, vendor/huawei/u8800pro/u8800pro-vendor.mk)
 DEVICE_PACKAGE_OVERLAYS += device/huawei/u8800pro/overlay
 PRODUCT_LOCALES += hdpi
 
+# OMX
 PRODUCT_PACKAGES += \
     libOmxCore \
     libOmxVenc \
@@ -14,7 +15,11 @@ PRODUCT_PACKAGES += \
     libmm-omxcore \
     libdivxdrmdecrypt \
     libstagefrighthw
-    
+
+# Lights 
+PRODUCT_PACKAGES += \
+    lights.msm7630_surf
+
 # Graphics 
 PRODUCT_PACKAGES += \
     gralloc.msm7630_surf \
