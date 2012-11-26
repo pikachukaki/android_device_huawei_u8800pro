@@ -6,8 +6,10 @@ rild.libpath=/system/lib/libril-qc-1.so
 rild.libargs=-d /dev/smd0
 ro.telephony.default_network=0
 ro.telephony.ril_class=HwQcomRIL
+mobiledata.interfaces=rmnet0,gprs,ppp0
 ril.subscription.types=NV,RUIM
 DEVICE_PROVISIONED=1
+
 # system props for the data modules and for telephony modules
 #
 ro.use_data_netmgrd=true
@@ -70,7 +72,13 @@ debug.camcorder.disablemeta=0
 ro.additionalmounts=/mnt/emmc
 ro.vold.switchablepair=/mnt/sdcard,/mnt/emmc
 ro.emmc.sdcard.partition=14
+ro.vold.umsdirtyratio=20
 
-ro.confg.hw_appsbootversion=U8800PROVSHENDU_APPSBOOT
-ro.confg.hw_appversion=U8800PROVSHENDU_KERNEL
-ro.confg.hw_appfsversion=U8800PROVSHENDU_SYSIMG
+ro.confg.hw_appsbootversion=U8800PROVSHENDUOS_APPSBOOT
+ro.confg.hw_appversion=U8800PROVSHENDUOS_KERNEL
+ro.confg.hw_appfsversion=U8800PROVSHENDUOS_SYSIMG
+
+dalvik.vm.heapstartsize=5m
+dalvik.vm.heapgrowthlimit=32m
+dalvik.vm.heapsize=80m
+dalvik.vm.dexopt-data-only=0
