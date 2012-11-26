@@ -72,7 +72,7 @@ static struct ril_event * watch_table[MAX_FD_EVENTS];
 static struct ril_event timer_list;
 static struct ril_event pending_list;
 
-#define DEBUG 0
+#define DEBUG 1
 
 #if DEBUG
 #define dlog(x...) LOGD( x )
