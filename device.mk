@@ -7,7 +7,6 @@ $(call inherit-product-if-exists, vendor/huawei/u8800pro/u8800pro-vendor.mk)
 DEVICE_PACKAGE_OVERLAYS += device/huawei/u8800pro/overlay
 PRODUCT_LOCALES += hdpi
 
-# OMX
 PRODUCT_PACKAGES += \
     libOmxCore \
     libOmxVenc \
@@ -15,11 +14,7 @@ PRODUCT_PACKAGES += \
     libmm-omxcore \
     libdivxdrmdecrypt \
     libstagefrighthw
-
-# Lights 
-PRODUCT_PACKAGES += \
-    lights.msm7630_surf
-
+    
 # Graphics 
 PRODUCT_PACKAGES += \
     gralloc.msm7630_surf \
@@ -38,6 +33,10 @@ PRODUCT_PACKAGES += \
     audio_policy.msm7630_surf \
     audio.a2dp.default \
     libaudioutils
+
+# Lights
+PRODUCT_PACKAGES += \
+    lights.msm7630_surf
 
 # Other
 PRODUCT_PACKAGES += \
@@ -67,6 +66,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
     frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
     frameworks/native/data/etc/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml \
+    frameworks/native/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
     frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
     frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
@@ -78,7 +78,6 @@ PRODUCT_COPY_FILES += \
     device/huawei/u8800pro/root/init.qcom.sh:root/init.qcom.sh \
     device/huawei/u8800pro/root/init.qcom.usb.sh:root/init.qcom.usb.sh \
     device/huawei/u8800pro/root/ueventd.huawei.rc:root/ueventd.huawei.rc
-    device/huawei/u8800pro/root/init.rc:root/init.rc
 
 # ETC
 PRODUCT_COPY_FILES += \
@@ -143,4 +142,4 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/huawei/u8800pro/prebuilt/20uncapfps:system/etc/init.d/20uncapfps
 $(call inherit-product, build/target/product/full.mk)
-$(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
+#$(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)

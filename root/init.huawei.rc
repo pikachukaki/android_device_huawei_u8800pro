@@ -15,7 +15,7 @@ on init
     
 
 on boot
-    exec system/bin/btnvtool -O
+    mkdir /data/misc/bluetooth 0770 bluetooth bluetooth
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
@@ -198,6 +198,7 @@ service rmt_storage /system/bin/rmt_storage /dev/block/mmcblk0p10 /dev/block/mmc
     class main
     user root
     disabled
+
 on property:ro.emmc=1
     start rmt_storage
 
