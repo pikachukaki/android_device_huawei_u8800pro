@@ -1,7 +1,5 @@
 
 LOCAL_PATH := $(call my-dir)
-
-device-makefiles := \
-    recovery
-
-include $(call all-makefiles-under,$(device-makefiles))
+ifeq ($(TARGET_BOOTLOADER_BOARD_NAME),u8800pro)
+include $(call all-makefiles-under,$(LOCAL_PATH))
+endif
