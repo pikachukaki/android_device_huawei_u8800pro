@@ -2440,7 +2440,7 @@ static int responseCdmaCallWaiting(Parcel &p, void *response,
     }
 
     if (responselen < sizeof(RIL_CDMA_CallWaiting_v6)) {
-        LOGW("Upgrade to ril version %d\n", RIL_VERSION);
+        ALOGW("Upgrade to ril version %d\n", RIL_VERSION);
     }
 
     RIL_CDMA_CallWaiting_v6 *p_cur = ((RIL_CDMA_CallWaiting_v6 *) response);
@@ -2838,7 +2838,7 @@ static void processWakeupCallback(int fd, short flags, void *param) {
     char buff[16];
     int ret;
 
-    LOGV("processWakeupCallback");
+    ALOGV("processWakeupCallback");
 
     /* empty our wakeup socket out */
     do {
@@ -2896,7 +2896,7 @@ static void processCommandsCallback(int fd, short flags, void *param) {
         if (ret != 0) {
             ALOGE("error on reading command socket errno:%d\n", errno);
         } else {
-            LOGW("EOS.  Closing command socket.");
+            ALOGW("EOS.  Closing command socket.");
         }
 
         close(s_fdCommand[client_id]);
@@ -2941,11 +2941,11 @@ static void onNewCommandConnect(int fd) {
     if (s_callbacks[client_id].getVersion != NULL) {
         const char *version;
         version = s_callbacks[client_id].getVersion();
-        LOGI("RIL Daemon version: %s\n", version);
+        ALOGI("RIL Daemon version: %s\n", version);
 
         property_set(PROPERTY_RIL_IMPL, version);
     } else {
-        LOGI("RIL Daemon version: unavailable\n");
+        ALOGI("RIL Daemon version: unavailable\n");
         property_set(PROPERTY_RIL_IMPL, "unavailable");
     }
 
@@ -3036,7 +3036,7 @@ static void listenCallback (int fd, short flags, void *param) {
         ALOGE ("Error setting O_NONBLOCK errno:%d", errno);
     }
 
-    LOGI("libril: new connection");
+    ALOGI("libril: new connection");
 
     p_rs[client_id] = record_stream_new(s_fdCommand[client_id], MAX_COMMAND_BYTES);
 
@@ -3116,11 +3116,11 @@ static void debugCallback (int fd, short flags, void *param) {
 
     switch (atoi(args[0])) {
         case 0:
-            LOGI ("Connection on debug port: issuing reset.");
+            ALOGI ("Connection on debug port: issuing reset.");
             issueLocalRequest(RIL_REQUEST_RESET_RADIO, NULL, 0, client_id);
             break;
         case 1:
-            LOGI ("Connection on debug port: issuing radio power off.");
+            ALOGI ("Connection on debug port: issuing radio power off.");
             data = 0;
             issueLocalRequest(RIL_REQUEST_RADIO_POWER, &data, sizeof(int), client_id);
             // Close the socket
@@ -3129,12 +3129,12 @@ static void debugCallback (int fd, short flags, void *param) {
             s_fdCommand[0] = -1;
             break;
         case 2:
-            LOGI ("Debug port: issuing unsolicited voice network change.");
+            ALOGI ("Debug port: issuing unsolicited voice network change.");
             RIL_onUnsolicitedSendResponse(RIL_UNSOL_RESPONSE_VOICE_NETWORK_STATE_CHANGED,
                                       NULL, 0, client_id);
             break;
         case 3:
-            LOGI ("Debug port: QXDM log enable.");
+            ALOGI ("Debug port: QXDM log enable.");
             qxdm_data[0] = 65536;     // head.func_tag
             qxdm_data[1] = 16;        // head.len
             qxdm_data[2] = 1;         // mode: 1 for 'start logging'
@@ -3145,7 +3145,7 @@ static void debugCallback (int fd, short flags, void *param) {
                               6 * sizeof(int), client_id);
             break;
         case 4:
-            LOGI ("Debug port: QXDM log disable.");
+            ALOGI ("Debug port: QXDM log disable.");
             qxdm_data[0] = 65536;
             qxdm_data[1] = 16;
             qxdm_data[2] = 0;          // mode: 0 for 'stop logging'
@@ -3156,7 +3156,7 @@ static void debugCallback (int fd, short flags, void *param) {
                               6 * sizeof(int), client_id);
             break;
         case 5:
-            LOGI("Debug port: Radio On");
+            ALOGI("Debug port: Radio On");
             data = 1;
             issueLocalRequest(RIL_REQUEST_RADIO_POWER, &data, sizeof(int), client_id);
             sleep(2);
@@ -3164,28 +3164,28 @@ static void debugCallback (int fd, short flags, void *param) {
             issueLocalRequest(RIL_REQUEST_SET_NETWORK_SELECTION_AUTOMATIC, NULL, 0, client_id);
             break;
         case 6:
-            LOGI("Debug port: Setup Data Call, Apn :%s\n", args[1]);
+            ALOGI("Debug port: Setup Data Call, Apn :%s\n", args[1]);
             actData[0] = args[1];
             issueLocalRequest(RIL_REQUEST_SETUP_DATA_CALL, &actData,
                               sizeof(actData), client_id);
             break;
         case 7:
-            LOGI("Debug port: Deactivate Data Call");
+            ALOGI("Debug port: Deactivate Data Call");
             issueLocalRequest(RIL_REQUEST_DEACTIVATE_DATA_CALL, &deactData,
                               sizeof(deactData), client_id);
             break;
         case 8:
-            LOGI("Debug port: Dial Call");
+            ALOGI("Debug port: Dial Call");
             dialData.clir = 0;
             dialData.address = args[1];
             issueLocalRequest(RIL_REQUEST_DIAL, &dialData, sizeof(dialData), client_id);
             break;
         case 9:
-            LOGI("Debug port: Answer Call");
+            ALOGI("Debug port: Answer Call");
             issueLocalRequest(RIL_REQUEST_ANSWER, NULL, 0, client_id);
             break;
         case 10:
-            LOGI("Debug port: End Call");
+            ALOGI("Debug port: End Call");
             issueLocalRequest(RIL_REQUEST_HANGUP, &hangupData,
                               sizeof(hangupData), client_id);
             break;
@@ -3641,7 +3641,7 @@ RIL_onUnsolicitedSendResponse(int unsolResponse, void *data,
 
     if (s_registerCalled == 0) {
         // Ignore RIL_onUnsolicitedSendResponse before RIL_register
-        LOGW("RIL_onUnsolicitedSendResponse called before RIL_register");
+        ALOGW("RIL_onUnsolicitedSendResponse called before RIL_register");
         return;
     }
 
