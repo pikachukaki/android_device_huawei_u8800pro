@@ -41,8 +41,7 @@ PRODUCT_PACKAGES += \
 # Other
 PRODUCT_PACKAGES += \
     dexpreopt \
-    gps.u8800pro \
-    libril
+    gps.u8800pro
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
