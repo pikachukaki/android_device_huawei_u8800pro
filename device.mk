@@ -140,5 +140,9 @@ PRODUCT_COPY_FILES += \
 # uncapfps
 PRODUCT_COPY_FILES += \
     device/huawei/u8800pro/prebuilt/20uncapfps:system/etc/init.d/20uncapfps
+
+# fix audio
+PRODUCT_COPY_FILES += \
+    device/huawei/u8800pro/prebuilt/lib/audio.primary.msm7630_surf.so:system/lib/hw/audio.primary.msm7630_surf.so
 $(call inherit-product, build/target/product/full.mk)
 #$(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
