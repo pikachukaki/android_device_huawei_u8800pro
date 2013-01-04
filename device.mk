@@ -17,9 +17,9 @@ PRODUCT_PACKAGES += \
     
 # Graphics 
 PRODUCT_PACKAGES += \
-    gralloc.msm7630_surf \
-    copybit.msm7630_surf \
-    hwcomposer.msm7630_surf \
+    gralloc.msm7x30 \
+    copybit.msm7x30 \
+    hwcomposer.msm7x30 \
     libgenlock \
     libmemalloc \
     liboverlay \
@@ -29,14 +29,14 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    audio.primary.msm7630_surf \
-    audio_policy.msm7630_surf \
+    audio.primary.msm7x30 \
+    audio_policy.msm7x30 \
     audio.a2dp.default \
     libaudioutils
 
 # Lights
 PRODUCT_PACKAGES += \
-    lights.msm7630_surf
+    lights.msm7x30
 
 # Other
 PRODUCT_PACKAGES += \
@@ -105,6 +105,11 @@ PRODUCT_COPY_FILES += \
     device/huawei/u8800pro/prebuilt/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
     device/huawei/u8800pro/prebuilt/wifi/nvram.txt:system/wifi/nvram.txt \
     device/huawei/u8800pro/prebuilt/wifi/dhd.ko:system/wifi/dhd.ko
+
+PRODUCT_COPY_FILES += \
+    device/huawei/u8800pro/prebuilt/vendor/firmware/fw_bcm4329.bin:system/vendor/firmware/fw_bcm4329.bin \
+    device/huawei/u8800pro/prebuilt/vendor/firmware/fw_bcm4329_abg.bin:system/vendor/firmware/fw_bcm4329_abg.bin \
+    device/huawei/u8800pro/prebuilt/vendor/firmware/fw_bcm4329_apsta.bin:system/vendor/firmware/fw_bcm4329_apsta.bin
 
 # firmware
 PRODUCT_COPY_FILES += \
