@@ -12,31 +12,23 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/telephony.mk)
-# Inherit from u8800pro device
-$(call inherit-product, device/huawei/u8800pro/device.mk)
+$(call inherit-product-if-exists, vendor/huawei/u8800pro/u8800pro-vendor.mk)
+$(call inherit-product, device/huawei/msm7x30-common/common.mk)
+
+DEVICE_PACKAGE_OVERLAYS += device/huawei/u8800pro/overlay
 
 
-# U8800PRO uses high-density artwork where available
-PRODUCT_AAPT_CONFIG := normal hdpi
-PRODUCT_AAPT_PREF_CONFIG := hdpi
+# These are the hardware-specific features
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
 
-ADDITIONAL_DEFAULT_PROPERTIES += \
-    persist.sys.usb.config=mtp
+# init
+PRODUCT_COPY_FILES += \
+    device/huawei/u8800pro/root/init.qcom.sh:root/init.qcom.sh
 
-# Live Wallpapers
-PRODUCT_PACKAGES += \
-   	LiveWallpapers \
-    	LiveWallpapersPicker \
-    	VisualizationWallpapers \
-    	librs_jni
-
-# Filesystem management tools
-PRODUCT_PACKAGES += \
-   	make_ext4fs \
-    	setup_fs
+# fix fps
+PRODUCT_COPY_FILES += \
+    device/huawei/u8800pro/prebuilt/20uncapfps:system/etc/init.d/20uncapfps
 
 # Set those variables here to overwrite the inherited values.
 PRODUCT_NAME := huawei_u8800pro
