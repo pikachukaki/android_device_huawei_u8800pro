@@ -12,7 +12,7 @@ $(call inherit-product, vendor/cm/config/gsm.mk)
 
 # Setup device configuration
 
-PRODUCT_NAME := shendu_u8800pro
+PRODUCT_NAME := cm_u8800pro
 PRODUCT_DEVICE := u8800pro
 PRODUCT_BRAND := Huawei
 PRODUCT_MODEL := U8800Pro
